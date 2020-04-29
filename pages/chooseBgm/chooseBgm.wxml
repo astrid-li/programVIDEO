@@ -1,0 +1,119 @@
+<view>
+  <i-steps current="{{current}}">
+    <i-step>
+      <view slot="title">
+        选择bgm
+      </view>
+      <view slot="content">
+        可选项
+      </view>
+    </i-step>
+    <i-step>
+      <view slot="title">
+        上传封面
+      </view>
+      <view slot="content">
+        可选项
+      </view>
+    </i-step>
+    <i-step>
+      <view slot="title">
+        上传描述
+      </view>
+      <view slot="content">
+        必填项
+      </view>
+    </i-step>
+  </i-steps>
+
+  <form bindsubmit='upload'>
+    <view class="mainContent">
+
+      <radio-group name="bgmId" wx:if="{{current==0}}" bindchange="changeRadio">
+
+        <block wx:for="{{bgmList}}">
+          <view class='container'>
+
+            <audio name="{{item.name}}" author="{{item.author}}" src="{{fileUrl}}{{item.path}}" style='width:300px' id="myAudio{{index}}" controls loop>myAudio{{index}}
+            </audio>
+            <radio style='margin-top:20px;' value='{{item.id}}'></radio>
+          </view>
+        </block>
+
+      </radio-group>
+      <button type="primary" bindtap="audioPlay">播放</button>
+
+      <button type="primary" bindtap="audioPause">暂停</button>
+      <view class='upload-works' wx:if="{{current==1}}">
+        <view class='work-box'>
+          <view class='works-img'>
+            <view class="img" wx:for="{{worksImgs}}" wx:for-item="item" wx:key="*this">
+              <!-- 图片缩略图  -->
+              <image src="{{fileUrl}}{{item}}" mode="aspectFill"></image>
+              <!-- 移除图片的按钮  -->
+              <i-icon class="delete-btn" type="close" data-index="{{index}}" catchtap="deleteImg" />
+            </view>
+
+            <i-icon type="camera" size="300" color="#80848f" wx:if="{{worksImgs.length==0}}" bindtap="chooseImage" />
+            <!-- <view class='img iconfont icontianjia' ></view> -->
+          </view>
+        </view>
+        <!-- 按钮 -->
+        <!-- <view class='btns'>
+        <button class='cancle' catchtap='cancleWorks'>取消</button>
+      </view> -->
+      </view>
+
+
+
+
+
+      <view class="inputView" wx:if="{{current==2}}">
+        <label class="loginLabel">视频描述：</label>
+        <input name="desc" class="inputText" placeholder="说点什么吧" />
+      </view>
+
+    </view>
+
+    <view class="end">
+      <i-button bindclick="handleOldClick" type="primary" shape="circle" wx:if="{{current!=0}}">上一步</i-button>
+      <i-button bindclick="handleClick" type="primary" shape="circle" wx:if="{{current!=2}}">下一步</i-button>
+      <!-- bindclick="upload" -->
+      <!-- <i-button type="primary" shape="circle" wx:if="{{current==2}}" form-type='submit'>上传视频</i-button> -->
+
+      <button class="submitBtn" type="primary" wx:if="{{current==2}}" form-type='submit'>上传视频</button>
+    </view>
+      
+      
+    </form>
+
+    <!-- <form bindsubmit='upload'>
+
+        <radio-group name="bgmId">
+
+
+          <block wx:for="{{bgmList}}">
+            <view class='container'>
+
+          <audio name="{{item.name}}" author="{{item.author}}" src="{{fileUrl}}{{item.path}}" style='width:300px' id="myAudio" controls loop>
+          </audio>
+          
+          <radio style='margin-top:20px;' value='{{item.id}}'></radio>
+        </view>
+          </block>
+
+
+        </radio-group>
+
+        <view class="inputView">
+            <label class="loginLabel">视频描述：</label>
+            <input name="desc" class="inputText" placeholder="说点什么吧" />
+        </view>
+
+        <!-- 提交 -->
+    <!-- <button class="submitBtn" type="primary" form-type='submit'>上传视频</button>
+
+  <button class="gobackBtn" type="warn" form-type='reset'>重置</button>
+  </form> -->
+  
+</view>

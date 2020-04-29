@@ -1,0 +1,306 @@
+page {
+  height: 100%;
+  background-color: #141414;
+}
+.videoButtom{
+  width: 70rpx;
+  height: 70rpx;
+  position:fixed; 
+}
+.videoButtom image{
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  position: fixed;
+  top: 0rpx;
+  display: flex;
+  margin-top: 20rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  justify-content: space-between;
+}
+
+.containerMeAll{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top:30rpx;
+}
+.containerMeAll image{
+  width: 100%;
+  height: 100%;
+}
+
+.container-me {
+  width: 80rpx;
+  position: fixed;
+  bottom: 350rpx;
+  right: 50rpx;
+}
+
+
+.container-words {
+  color: white;
+  font-size: 14px;
+  position: fixed;
+  bottom: 50rpx;
+  z-index: 0;
+}
+
+.video-desc {
+    width: 600rpx;
+    height: 100rpx;
+}
+
+.container-bottom {
+  bottom: 0px; 
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  padding: 0 50rpx;
+  box-sizing: border-box;
+}
+
+
+.size-me-bgm {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.bgm-style {
+    display: flex;
+    flex-direction: row;
+}
+
+.size-bottom {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 15rpx;
+}
+
+.face2 {
+    width: 75rpx;
+    height: 75rpx;
+    border: 0 solid #f00;
+    border-radius: 100rpx;
+    background-color: #f10b2e;
+}
+
+.face {
+    width: 75rpx;
+    height: 75rpx;
+    /* margin: 20rpx; */
+    border-radius: 50%;
+}
+
+.icoBtn {
+    flex: 1;
+    width: 80rpx;
+    height: 100%;
+}
+
+
+
+
+.danmuGrop{
+  margin-bottom:0rpx;
+  display: flex;
+  /* align-items: center;
+  justify-content: center;  
+  width: 70%;
+  height: 70%; */
+}
+
+/* .danmuinput{
+  border: solid 1px #ccc;
+  margin-left: 50rpx;
+  height: 55rpx;
+  line-height: 50rpx;
+  font-size: 35rpx;
+  padding-left: 10rpx;
+  border-radius: 10rpx;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 50%;
+  color: white;
+}
+
+.sendDanmu{
+  width: 15%;
+
+  background-color: rgb(124, 255, 124);
+  color: white;
+  border-top-left-radius:0px;
+  border-bottom-left-radius: 0px; 
+  margin:0px;
+
+  
+  height: 58rpx;
+} */
+
+
+.danmuinput{
+  border: solid 1px #ccc;
+  margin-left: 25rpx;
+  height: 55rpx;
+  font-size: 30rpx;
+  padding-left: 20rpx;
+  border-radius: 10rpx;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 60%;
+  color: white;
+  z-index: 1
+}
+
+.sendDanmu{
+  width: 20%;
+  margin:0px;
+  background-color: rgb(124, 255, 124);
+  color: white;
+  border-top-left-radius:0px;
+  border-bottom-left-radius: 0px; 
+  height: 59rpx;
+  font-size: 30rpx;  
+  line-height: 59rpx;
+}
+
+
+.size-bottom-me {
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: 30rpx;
+}
+
+
+
+
+
+
+
+
+/* =====评论内容遮罩层==== */
+.isShow{
+  display: block;
+}
+.isHide{
+  display: none;
+}
+.commentContent{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color:rgba(0, 0, 0, .5);
+  overflow: hidden;
+  z-index: 2;
+  color:black;
+  text-align: center;
+}
+.commentDetil{
+  margin: 0px;
+  height: 1200rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background: #fff;
+  padding-top: 20rpx;
+  
+}
+.commentTitil{
+  text-align: center;
+  font-size: 40rpx;
+  position: relative;
+  top:10rpx;
+  
+}
+
+
+.comments-scoll {
+  height: 1030rpx;
+  position: relative;
+  top:30rpx;
+}
+
+
+.comments-all {
+  color: #e8e8e8;
+  background-color:white;
+  position: relative;
+  width: 100%;
+}
+.commentFace,i-card,i-card-full{
+  border-bottom: 0rpx white!important;
+
+}
+.commentIn,i-card-full{
+  border-left: thick solid gold;
+  width: 94%;
+  }
+.commentFace i-card{
+  position: relative;
+  right: 0px;
+}
+.face-comments {
+  border-radius: 50%;
+  position: relative;
+  float: left;
+}
+
+.container-comments{
+    display: flex;
+    
+}
+
+
+.nickname-comments {
+  margin-left: 10px;
+  position: relative;
+  float: left;
+  top:10rpx;
+}
+
+.nickname-lbl{
+    color: #a1a1a1;
+}
+
+.date-lbl{
+    color: #a1a1a1;
+}
+
+
+.saySthView {
+  background-color: whitesmoke;
+  line-height: 35px;
+  color: black;
+  z-index: 4;  
+  text-align: left;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  padding-top: 10px;
+}
+.saySth{
+  width: 72%;
+  float: left;
+  position: absolute;
+  background: white;
+  bottom: 6px;
+  font-size: 20px;
+  left: 10px;
+}
+.contentHide{
+  height: 60rpx!important;
+  width: 60rpx!important;
+  position: absolute;
+  top: 0rpx;
+  right: 0rpx;
+}
+

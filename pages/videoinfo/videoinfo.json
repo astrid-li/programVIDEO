@@ -1,0 +1,15 @@
+{
+  "usingComponents": {
+    "i-divider": "../../dist/divider/index",
+    "i-load-more": "../../dist/load-more/index",
+    "i-icon": "../../dist/icon/index",
+    "i-avatar": "../../dist/avatar/index",
+    "i-card": "../../dist/card/index",
+    "i-input": "../../dist/input/index",
+    "i-cell": "../../dist/cell/index",
+    "i-button": "../../dist/button/index",
+    "i-row": "../../dist/row/index",
+    "i-col": "../../dist/col/index"
+
+  }
+}

@@ -1,0 +1,96 @@
+
+#uploadVideo{
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+}
+
+#chooseTool{
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: yellow;
+}
+
+.chooseBottom{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  background-color: red;
+  width: 100%;
+  padding: 7px;
+}
+.chooseButton{
+  width: 70rpx;
+  height: 70rpx;
+  border-color: blue;
+  font-size: 12px;
+  text-align: center;
+}
+.chooseButton image{
+  width: 100%;
+  height: 100%;
+}
+.chooseBottom text{
+  
+}
+
+
+page {
+    height: 100%;
+} 
+.container {
+    display: flex;
+    margin-top: 20rpx; 
+    /*每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。*/
+     justify-content: space-around;   
+}
+
+.submitBtn {
+    width: 80%;
+    margin-top: 15px;
+}
+
+.gobackBtn {
+    width: 80%;
+    margin-top: 15px;
+}
+
+
+.loginLabel {
+    color: gray;
+    font-size: 15px;
+}
+
+.inputText {
+    float: right;
+    text-align: right;
+    margin-right: 22px;
+    margin-top: 11px;
+    font-size: 15px;
+}
+
+.inputView {
+    padding: 5px;
+    background-color: white;
+    line-height: 45px;
+    border: solid 1px whitesmoke;
+}
+
+.mainContent {
+  width: 80%;
+
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 0 rpx; 
+}
+
+.end {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%; 
+}

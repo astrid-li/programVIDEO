@@ -1,0 +1,32 @@
+<view class="topView">
+  <view  class="topText">
+
+    
+
+    <!-- <i-button type="primary" bind:click="handleClick">这是一个按钮</i-button>
+    <text bindtap='hotVideo' decode="{{true}}">热门&nbsp;&nbsp;</text> | 
+    <text bindtap='recommedVideo' decode="{{true}}">&nbsp;&nbsp;推荐</text> -->
+
+    <i-tabs current="{{ current }}" bindchange="handleChange" color="#f759ab">
+    <i-tab key="tab1" title="热门"></i-tab>
+    <i-tab key="tab2" title="附   近"></i-tab>
+    <i-tab key="tab3" title="推荐"></i-tab>
+    </i-tabs>
+    
+
+  </view>
+</view>
+
+  <view wx:for="{{videoList}}" class="item-container">  
+     <view style='width:{{screenWidth}}px;height:210px;' class='back-img'> 
+        <image src="{{fileUrl}}{{item.coverPath}}" style='width:{{screenWidth}}px;height:210px;' mode="aspectFit" bindtap='showVideoInfo' data-arrindex='{{index}}'></image>
+     </view> 
+
+    <view class="desc">
+        <view class="faceName">
+            <image class='myface' src="{{fileUrl}}{{item.faceImage}}"></image>
+            <view class="nickname">{{item.nickname}}</view>
+        </view>
+    </view>
+
+  </view>  

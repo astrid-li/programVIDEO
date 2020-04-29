@@ -1,0 +1,93 @@
+<form bindsubmit='upload' bindreset="formReset" >
+  <scroll-view style="height:90%; ">
+    <view class='item'>
+      <textarea show-confirm-bar="{{true}}"  class="sayTitle" name="textarea" bindblur="bindTextAreaBlur" auto-height placeholder="{{placeholder}}"  value='{{contentValue}}'  maxlength="55" bindinput="changeInput" />
+      <view class="changeCover">
+        <video id="uploadVideo" src="{{videoParams.tmpVideoUrl}}" controls="{{false}}" muted="{{true}}" autoplay="{{true}}" loop="{{true}}" 
+        enable-progress-gesture="{{false}}"  auto-pause-if-navigate= "{{true}}" style="width: 100%;height: 100%;" auto-pause-if-open-native="{{true}}"  >  
+        </video>
+        <view class="whetherChange" style="z-index:{{textLevel}};" bindtap="isChangeImage">
+          <text>{{whetherChangeText}}</text>
+        </view>
+        <view style="display:{{whetherChangeImage}};z-index:{{imageLevel}};height:100%;width:100%;position:absolute;top:0; overfloat:hidding;">
+          <image src="{{fileUrl}}{{coverImage}}" mode="aspectFill" style="height:100%;width:100%" name="image" value="{{coverImage}}"></image>
+        </view>
+        
+      </view>
+      
+    </view>
+
+    <view style="clear:both;width:100%;height:10px;"></view>
+
+    <view class="separatorItem"></view>
+
+    <view class='item'>
+      <i-icon type="coordinates" size="23"  />
+      添加位置
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}" name="regionPicker" custom-item="{{customItem}}">
+        <view class="picker">
+          <i-icon i-class="localIcon" type="enter" />
+          <text class="localContent"> {{myLocal}} </text>
+        </view>
+      </picker>
+    </view>
+    <view class="separatorItem" ></view>
+    <view class='item'>
+      <i-icon type="remind_fill" size="23" />
+      视频原音
+      <i-switch i-class="soloChoose" name="switchSolo" value="{{switchSolo}}" size="large" bind:change="onSoloChange" slot="footer">
+        <view slot="open">开启</view>
+        <view slot="close">关闭</view>
+      </i-switch>
+    </view>
+
+    <view class="separatorItem"></view>
+    <view class='item'>
+      <i-icon type="remind" size="23"  />
+      背景音乐
+      <i-switch i-class="musicChoose" name="switchBgMusic" value="{{switchMusic}}" size="large" bind:change="onMusicChange" slot="footer">
+        <view slot="open">开启</view>
+        <view slot="close">关闭</view>
+      </i-switch>
+    </view>
+    
+    <view style="display:{{chooseM}}">
+      
+      <view class="separatorItem" ></view>
+      <view class='item' style="height:27px;overfloat:hidding;">
+        <i-icon type="add" size="23"  />
+        选择音乐
+        <picker mode="selector" bindchange="bindPickerChange" value="{{index}}" name="musicPicker" range-key="name" range="{{bgmList}}">
+          <view class="picker" style="right:25px;">
+            {{pickerMusic}}
+          </view>
+        </picker>
+      </view>
+      <block wx:if="{{showAudio}}">
+        <audio name="{{bgmList[index].name}}" poster="{{bgmList[index].poster}}" controls="{{true}}" author="{{bgmList[index].author}}" src="{{fileUrl}}{{bgmList[index].path}}" style='margin-left:2.5%; width:98%' id="myAudio{{index}}" controls loop></audio>
+      </block>
+    </view>
+  </scroll-view>
+  
+  <view id="buttonFooter">
+    <i-button size="small" bind:click="formReset" type="ghost" i-class="resetButton">    
+      <i-icon type="refresh" size="23"  slot="icon" />
+      重置
+    </i-button>
+    <i-button size="small" bind:click="upload" type="error" i-class="submitButton" loading="{{loading}}" >    
+      <view style="display:{{submitIcon}}">
+        <i-icon type="success" size="23"  slot="icon" /> 发布
+      </view>
+      发布
+    </i-button>
+  </view>
+  
+</form>
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/userLogin/login",
+    "pages/logs/logs",
+    "pages/report/report",
+    "pages/videoinfo/videoinfo",
+    "pages/userRegist/regist",
+    "pages/searchVideo/searchVideo",
+    "pages/uploadVideo/uploadVideo"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校园短视频",
+    "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "您的位置信息将用于附近视频的功能~"
+    }
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap94.json"
+}
